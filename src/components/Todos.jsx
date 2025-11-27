@@ -2,9 +2,11 @@ import { useSelector, useDispatch } from "react-redux"
 import {removeToDo} from "../features/todo/todoSlice"
 
 export default function Todos() {
-    // Access of state is received from a 
+    // Access of state is received from a callback in here
     const todos = useSelector(state => state.todos)
 
+    const dispatch = useDispatch()
+    
     return (
         <>
             <div>Todos</div>
