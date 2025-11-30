@@ -2,9 +2,10 @@ import { useSelector, useDispatch } from "react-redux"
 import {removeToDo} from "../features/todo/todoSlice"
 
 export default function Todos() {
+    // From the rtk, to get state values, useSelector is used and to store data in state, dispatch is used
+
     // Access of state is received from a callback in here
     const todos = useSelector(state => state.todos)//Since initState has an array of obj named todos in the slice
-
     const dispatch = useDispatch()
     
     return (
