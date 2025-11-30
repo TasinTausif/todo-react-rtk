@@ -3,13 +3,12 @@ import {removeToDo} from "../features/todo/todoSlice"
 
 export default function Todos() {
     // Access of state is received from a callback in here
-    const todos = useSelector(state => state.todos)
+    const todos = useSelector(state => state.todos)//Since initState has an array of obj named todos in the slice
 
     const dispatch = useDispatch()
     
     return (
         <>
-            <div>Todos</div>
             <ul className="list-none">
                 {todos.map((todo) => (
                     <li
@@ -18,7 +17,7 @@ export default function Todos() {
                     >
                         <div className='text-white'>{todo.text}</div>
                         <button
-                            onClick={() => dispatch(removeTodo(todo.id))}
+                            onClick={() => dispatch(removeToDo(todo.id))}
                             className="text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md"
                         >
                             <svg
